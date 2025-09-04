@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabrina & Leiliane 🌙☀️</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #f9d423, #ff4e50);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: white;
+    }
+    header {
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin: 10px 0;
+    }
+    .contador {
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin: 20px;
+    }
+    .galeria img, .galeria video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .spotify {
+      margin: 30px auto;
+      max-width: 400px;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sabrina & Leiliane 🌞🌙</h1>
+    <p>Nosso cantinho especial</p>
+  </header>
+
+  <section class="contador">
+    <p>Estamos juntas há:</p>
+    <p id="tempo"></p>
+  </section>
+
+  <section class="galeria">
+    <img src="https://placekitten.com/400/300" alt="Foto exemplo">
+    <video controls>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos.
+    </video>
+  </section>
+
+  <section class="spotify">
+    <h2>Nossa Playlist 🎶</h2>
+    <!-- Cole o link do Spotify aqui -->
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M"
+      width="100%" height="380" frameborder="0" allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </section>
+
+  <footer>
+    <p>Com amor, Sabrina & Leiliane ❤️</p>
+  </footer>
+
+  <script>
+    function atualizarContador() {
+      const dataInicio = new Date("2021-06-15"); // coloque aqui a data de início do namoro
+      const agora = new Date();
+      const diff = agora - dataInicio;
+
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const anos = Math.floor(dias / 365);
+      const meses = Math.floor((dias % 365) / 30);
+
+      document.getElementById("tempo").innerText =
+        `${anos} anos, ${meses} meses e ${dias} dias`;
+    }
+    atualizarContador();
+    setInterval(atualizarContador, 1000 * 60 * 60);
+  </script>
+</body>
+</html>
